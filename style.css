@@ -1,6 +1,6 @@
 /* General Body Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,71 +9,76 @@ body {
 }
 
 /* Header and Navigation */
+/* Styles for header, nav, nav ul, nav ul li are largely handled by Bootstrap's navbar component */
+/* Specific overrides or additions can be made if necessary */
 header {
-    background-color: #2c3e50; /* Dark blue */
-    color: #ecf0f1; /* Light grey */
-    padding: 1rem 0;
+    /* background-color: #2c3e50; */ /* Bootstrap class bg-dark is used */
+    color: #ecf0f1; /* Light grey - still useful for default text color if not overridden by Bootstrap */
+    /* padding: 1rem 0; */ /* Bootstrap handles padding */
     position: sticky;
     top: 0;
-    z-index: 1000;
-    width: 100%;
+    z-index: 1000; /* Ensure navbar stays on top */
+    /* width: 100%; */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* nav { */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* max-width: 1100px; */ /* Bootstrap container handles this */
+    /* margin: 0 auto; */
+    /* padding: 0 20px; */
+/* } */
 
-nav .logo {
-    font-size: 1.8em;
+nav .logo { /* .navbar-brand.logo */
+    font-size: 1.8em !important; /* Ensure size is maintained, !important might be needed if Bootstrap overrides too strongly */
     font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
+/* nav ul { */
+    /* list-style: none; */
+    /* display: flex; */
+    /* padding: 0; */
+    /* margin: 0; */
+/* } */
 
-nav ul li {
-    margin-left: 20px;
-}
+/* nav ul li { */
+    /* margin-left: 20px; */ /* Bootstrap .navbar-nav .nav-item might need adjustment if default spacing is not desired */
+/* } */
 
-nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s ease;
-}
+/* nav ul li a { */
+    /* color: #ecf0f1; */ /* Bootstrap .nav-link color can be customized or this can be an override */
+    /* text-decoration: none; */
+    /* font-size: 1em; */
+    /* transition: color 0.3s ease; */
+/* } */
 
-nav ul li a:hover {
-    color: #3498db; /* Bright blue for hover */
+nav .nav-link:hover { /* Target Bootstrap's nav-link for hover */
+    color: #3498db !important; /* Bright blue for hover, ensure it overrides Bootstrap */
 }
 
 /* Hero Section */
 #hero {
-    background: #3498db url('https://via.placeholder.com/1920x600.png?text=TommyTechs+Hero+Background') no-repeat center center/cover; /* Placeholder image */
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
+    background: #3498db url('https://via.placeholder.com/1920x600.png?text=TommyTechs+Hero+Background') no-repeat center center/cover;
+    /* color: #fff; */ /* Handled by Bootstrap text-white */
+    /* text-align: center; */ /* Handled by Bootstrap text-center */
+    /* padding: 100px 20px; */ /* Bootstrap py-5 handles vertical padding, container handles horizontal */
     min-height: 400px; /* Ensure hero has some height */
-    display: flex;
+    display: flex; /* Keep flex for vertical centering of content if needed beyond Bootstrap's capabilities */
     align-items: center;
     justify-content: center;
 }
 
 #hero .hero-content {
-    max-width: 700px;
+    max-width: 700px; /* Keep this constraint */
 }
 
 #hero h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     margin-bottom: 0.5em;
+    font-weight: 900; /* Make hero heading bolder */
 }
 
 #hero p {
@@ -82,60 +87,64 @@ nav ul li a:hover {
 }
 
 .cta-button {
-    background-color: #e74c3c; /* Red-orange */
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.1em;
-    border-radius: 5px;
+    background-color: #e74c3c !important; /* Red-orange, ensure it overrides Bootstrap's btn-danger if needed */
+    /* color: #fff; */ /* Handled by Bootstrap's btn classes */
+    /* padding: 15px 30px; */ /* Adjust if Bootstrap's btn-lg padding is not sufficient */
+    /* text-decoration: none; */
+    /* font-size: 1.1em; */
+    /* border-radius: 5px; */ /* Bootstrap's default or use .rounded-pill etc. */
     transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #c0392b; /* Darker red-orange */
+    background-color: #c0392b !important; /* Darker red-orange */
 }
 
 /* Services Section */
 #services {
-    padding: 60px 20px;
-    text-align: center;
+    /* padding: 60px 20px; */ /* Bootstrap py-5 and container handle padding */
+    /* text-align: center; */ /* Bootstrap text-center on h2 if needed */
 }
 
 #services h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */ /* Bootstrap mb-5 on h2 handles this */
     color: #2c3e50; /* Dark blue */
+    font-weight: 700;
 }
 
-.service-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+/* .service-cards { */
+    /* display: flex; */ /* Handled by Bootstrap row */
+    /* flex-wrap: wrap; */ /* Handled by Bootstrap row */
+    /* justify-content: center; */ /* Handled by Bootstrap row and col alignment */
+    /* gap: 30px; */ /* Bootstrap gy-4 handles this */
+    /* max-width: 1100px; */ /* Bootstrap container handles this */
+    /* margin: 0 auto; */
+/* } */
 
-.service-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 30px;
-    width: calc(50% - 40px); /* Two cards per row on larger screens */
-    max-width: 400px; /* Max width for cards */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.service-card { /* This class is still on the .card element for potential custom overrides */
+    /* background-color: #f9f9f9; */ /* Bootstrap .card default or customize */
+    /* border: 1px solid #ddd; */ /* Bootstrap .card default or customize */
+    /* border-radius: 8px; */ /* Bootstrap .card default or customize */
+    /* padding: 30px; */ /* Bootstrap .card-body handles padding */
+    /* width: calc(50% - 40px); */ /* Handled by Bootstrap col classes */
+    /* max-width: 400px; */ /* Could be kept if specific max-width is desired per card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Keep custom shadow if preferred over Bootstrap's */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Keep custom hover effect */
 }
 
-.service-card h3 {
+.service-card .card-title { /* Target Bootstrap's card-title class now */
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
     color: #3498db; /* Bright blue */
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .service-card p {
@@ -145,156 +154,170 @@ nav ul li a:hover {
 
 /* About Us Section */
 #about {
-    background-color: #ecf0f1; /* Light grey background */
-    padding: 60px 20px;
-    text-align: center;
+    /* background-color: #ecf0f1; */ /* Bootstrap .bg-light is used */
+    /* padding: 60px 20px; */ /* Bootstrap py-5 and container */
+    /* text-align: center; */ /* Bootstrap .text-center on p and h2 */
 }
 
 #about h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */ /* Bootstrap .mb-4 on h2 */
     color: #2c3e50; /* Dark blue */
+    font-weight: 700;
 }
 
 #about p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.1em; /* Keep custom font size for lead paragraph if desired */
+    /* max-width: 800px; */ /* Bootstrap container and text-center handle this */
+    /* margin: 0 auto; */
     color: #333;
 }
 
 /* Contact Section */
 #contact {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff;
+    /* padding: 60px 20px; */ /* Bootstrap py-5 and container */
+    /* text-align: center; */ /* Bootstrap .text-center on text elements */
+    /* background-color: #fff; */ /* Default or specify if needed */
 }
 
 #contact h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */ /* Bootstrap .mb-3 on h2 */
     color: #2c3e50; /* Dark blue */
+    font-weight: 700;
 }
 
-#contact p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
+#contact p.lead { /* Targeting the lead paragraph specifically */
+    font-size: 1.1em; /* Keep custom font size */
+    /* margin-bottom: 30px; */ /* Bootstrap .mb-5 on p */
     color: #555;
 }
 
 #contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: left;
+    /* max-width: 600px; */ /* Handled by Bootstrap col-md-8 col-lg-6 mx-auto */
+    /* margin: 0 auto; */
+    background: #f9f9f9; /* Keep custom form background */
+    padding: 30px; /* Keep custom form padding */
+    border-radius: 8px; /* Keep custom border radius */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Keep custom shadow */
+    /* text-align: left; */ /* Default for forms */
 }
 
-#contact form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-}
+/* #contact form label { */
+    /* display: block; */ /* Bootstrap .form-label handles this */
+    /* margin-bottom: 8px; */ /* Bootstrap .mb-3 on parent div */
+    /* font-weight: bold; */ /* Bootstrap .form-label is bold by default */
+    /* color: #333; */
+/* } */
 
-#contact form input,
-#contact form select,
-#contact form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-    font-size: 1em;
-}
+/* #contact form input, */
+/* #contact form select, */
+/* #contact form textarea { */
+    /* width: 100%; */ /* Bootstrap .form-control and .form-select are 100% width */
+    /* padding: 12px; */ /* Bootstrap .form-control and .form-select have own padding */
+    /* margin-bottom: 20px; */ /* Bootstrap .mb-3 on parent div */
+    /* border: 1px solid #ddd; */ /* Bootstrap .form-control and .form-select have own border */
+    /* border-radius: 4px; */ /* Bootstrap .form-control and .form-select have own border-radius */
+    /* box-sizing: border-box; */
+    /* font-size: 1em; */
+/* } */
 
-#contact form button {
-    background-color: #2ecc71; /* Green */
-    color: #fff;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
+/* #contact form button { */
+    /* background-color: #2ecc71; */ /* Bootstrap .btn-success used */
+    /* color: #fff; */
+    /* padding: 15px 20px; */ /* Bootstrap .btn-lg used */
+    /* border: none; */
+    /* border-radius: 5px; */
+    /* font-size: 1.1em; */
+    /* cursor: pointer; */
+    /* transition: background-color 0.3s ease; */
+    /* width: 100%; */ /* Bootstrap .w-100 used */
+/* } */
 
-#contact form button:hover {
-    background-color: #27ae60; /* Darker green */
-}
+/* #contact form button:hover { */
+    /* background-color: #27ae60; */ /* Bootstrap .btn-success hover is handled */
+/* } */
 
 /* Footer */
 footer {
-    background-color: #2c3e50; /* Dark blue */
-    color: #ecf0f1; /* Light grey */
-    text-align: center;
-    padding: 20px 0;
+    /* background-color: #2c3e50; */ /* Bootstrap .bg-dark used */
+    /* color: #ecf0f1; */ /* Bootstrap .text-white used */
+    /* text-align: center; */ /* Bootstrap .text-center used */
+    /* padding: 20px 0; */ /* Bootstrap .py-4 used */
 }
 
 footer p {
-    margin: 0;
-    font-size: 0.9em;
+    /* margin: 0; */ /* Bootstrap .mb-0 used */
+    font-size: 0.9em; /* Keep custom font size for footer text */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        display: none; /* Hide by default on mobile, can be toggled with JS if needed */
-    }
+/* Responsive Design - Bootstrap handles most of this. Review and remove/simplify. */
+/* @media (max-width: 768px) { */
+    /* nav ul { */ /* Bootstrap navbar-collapse handles this */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* width: 100%; */
+        /* display: none; */ /* Hide by default on mobile, can be toggled with JS if needed */
+    /* } */
 
-    nav ul.active { /* Class to show menu on mobile if JS toggle is implemented */
-        display: flex;
-    }
+    /* nav ul.active { */ /* Class to show menu on mobile if JS toggle is implemented */
+        /* display: flex; */
+    /* } */
 
-    nav ul li {
-        margin: 10px 0;
-    }
+    /* nav ul li { */
+        /* margin: 10px 0; */ /* Bootstrap .navbar-nav styling */
+    /* } */
 
-    #hero h1 {
-        font-size: 2.2em;
-    }
+    /* #hero h1 { */
+        /* font-size: 2.2em; */ /* Consider using Bootstrap responsive font size classes if needed or adjust here */
+    /* } */
 
-    #hero p {
-        font-size: 1em;
-    }
+    /* #hero p { */
+        /* font-size: 1em; */
+    /* } */
 
-    .service-cards {
-        flex-direction: column;
-        align-items: center;
-    }
+    /* .service-cards { */ /* Bootstrap row and col classes handle this */
+        /* flex-direction: column; */
+        /* align-items: center; */
+    /* } */
 
-    .service-card {
-        width: 90%; /* Full width on smaller screens */
-        margin-bottom: 20px;
-    }
+    /* .service-card { */ /* Bootstrap col classes make them stack */
+        /* width: 90%; */ /* Full width on smaller screens */
+        /* margin-bottom: 20px; */ /* Bootstrap gy-4 handles spacing */
+    /* } */
 
-    #contact form {
-        padding: 20px;
-    }
-}
+    /* #contact form { */
+        /* padding: 20px; */ /* Adjust if needed for smaller screens */
+    /* } */
+/* } */
 
-@media (max-width: 480px) {
-    nav .logo {
-        font-size: 1.5em;
-    }
-    #hero h1 {
-        font-size: 1.8em;
-    }
-    #hero p {
-        font-size: 0.9em;
-    }
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-    #services h2, #about h2, #contact h2 {
-        font-size: 2em;
-    }
+/* @media (max-width: 480px) { */
+    /* nav .logo { */
+        /* font-size: 1.5em; */ /* Adjust if needed, or use Bootstrap responsive text utilities */
+    /* } */
+    /* #hero h1 { */
+        /* font-size: 1.8em; */
+    /* } */
+    /* #hero p { */
+        /* font-size: 0.9em; */
+    /* } */
+    /* .cta-button { */
+        /* padding: 12px 25px; */
+        /* font-size: 1em; */
+    /* } */
+    /* #services h2, #about h2, #contact h2 { */
+        /* font-size: 2em; */
+    /* } */
+/* } */
+
+/* Custom styles that should remain or be adjusted */
+/* Ensure .card-title in .service-card gets the Montserrat font */
+.service-card .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em; /* Ensure this is what you want, might conflict with Bootstrap's card-title sizing */
+    color: #3498db;
+    font-weight: 700;
+    margin-bottom: 15px; /* explicit margin bottom for card titles */
 }
